@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Estilos comunes */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo oscuro */
+html.dark {
+  background-color: #161616;
+  color: rgb(255, 255, 255);
+}
+
+/* Modo claro */
+html.light {
+  background-color: #c6e3fe;
+  color: black;
+}
+
+/* Puedes añadir más estilos para los diferentes elementos de tu página */
+button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #bdbcbc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0018cb;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #464646;
+}
