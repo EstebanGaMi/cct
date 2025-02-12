@@ -11,7 +11,7 @@ const page = ({ darkMode }) => {
       } pt-20 z-40`}
     >
       <Navbar />
-      <AboutSection />
+      <AboutSection area="marroquineria" />
       <SocialNetworks />
     </section>
   );

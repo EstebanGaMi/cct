@@ -3,11 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { NavLink } from "./NavLink";
 import { BsGridFill, BsGrid } from "react-icons/bs";
-import {
-  AiOutlineGithub,
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
+import { AiOutlineInstagram } from "react-icons/ai";
 import { MenuOverlay } from "./MenuOverlay";
 import Image from "next/image";
 
@@ -23,7 +19,7 @@ const navLinks = [
   },
   {
     title: "Inscripciones",
-    path: "https://docs.google.com/forms/d/e/1FAIpQLSfu8AtaXd-5JS8hclY_RHbG-suSo9sAqEgIAZsMF9pH3UVXMw/viewform",
+    path: "https://docs.google.com/forms/d/e/1FAIpQLSeWsafIalDGPu5Tf06juy4ZrYWHhpFZnARoEosOpDoL1hyC1w/viewform?usp=sf_link",
     isExternal: true, // Indicamos que es un enlace externo
   },
 ];
@@ -89,27 +85,27 @@ export const Navbar = () => {
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
       <section className="flex justify-around py-2 border border-slate-700 lg:border-none md:border-none">
-        <Link
+        {/* <Link
           href="https://github.com/EstebanGaMi"
           target="_blank"
           aria-label="this is my github"
         >
           <AiOutlineGithub className="text-2xl text-white lg:hidden md:hidden hover:text-blue-500" />
-        </Link>
+        </Link> */}
         <Link
-          href="https://www.instagram.com/_estebang23_/"
+          href="https://www.instagram.com/cct6048/"
           target="_blank"
           aria-label="this is my instagram"
         >
           <AiOutlineInstagram className="text-2xl text-white lg:hidden md:hidden hover:text-blue-500" />
         </Link>
-        <Link
+        {/* <Link
           href="https://www.linkedin.com/in/esteban-garay-4baa94202/"
           target="_blank"
           aria-label="this is my linkedin"
         >
           <AiOutlineLinkedin className="text-2xl text-white lg:hidden md:hidden hover:text-blue-500" />
-        </Link>
+        </Link> */}
       </section>
     </nav>
   );

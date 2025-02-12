@@ -14,7 +14,7 @@ const projectsData = [
     image: "/images/projects/soldadura.webp",
     tag: ["Todos", "Mañana", "Tarde"],
 
-    previewUrl: "/about",
+    previewUrl: "/soldadura",
   },
   {
     id: 2,
@@ -22,9 +22,9 @@ const projectsData = [
     description:
       "Explora el fascinante mundo de la moda y la confección. En el taller textil, desarrollarás habilidades en diseño, costura y patronaje, creando prendas únicas y funcionales mientras potencias tu creatividad y técnica.",
     image: "/images/projects/textil.webp",
-    tag: ["Todos", "Mañana"],
+    tag: ["Todos", "Mañana", "Tarde"],
 
-    previewUrl: "",
+    previewUrl: "/textil",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const projectsData = [
     image: "/images/projects/carpinteria.webp",
     tag: ["Todos", "Mañana"],
 
-    previewUrl: "",
+    previewUrl: "/carpinteria",
   },
   {
     id: 4,
@@ -44,27 +44,27 @@ const projectsData = [
     image: "/images/projects/gas.webp",
     tag: ["Todos", "Mañana"],
 
-    previewUrl: "",
+    previewUrl: "/gas",
   },
   {
     id: 5,
-    title: "Informática",
+    title: " Informática aplicada a la industria Textil",
     description:
-      "Domina las herramientas esenciales del mundo digital. En nuestro taller de informática básica, aprenderás a manejar computadoras, procesadores de texto, hojas de cálculo y navegadores web, desarrollando habilidades fundamentales para el trabajo y la vida diaria.",
+      "Optimiza la producción textil con tecnología. En nuestro taller de Informática Aplicada a la Industria Textil, aprenderás a utilizar software especializado para el diseño de patrones, control de calidad, gestión de inventarios y automatización de procesos, mejorando la eficiencia y precisión en cada etapa de la producción.",
     image: "/images/projects/informatica.webp",
     tag: ["Todos", "Mañana", "Tarde"],
 
-    previewUrl: "",
+    previewUrl: "/informatica",
   },
   {
     id: 6,
-    title: "Peluquería",
+    title: "Peluquería y Estética Personal",
     description:
       "Exprésate y ayuda a otros a reflejar su mejor versión. En nuestro taller de peluquería, aprenderás técnicas modernas de corte, peinado y coloración, con una formación integral para destacar en el mundo de la belleza.",
     image: "/images/projects/peluqueria.webp",
     tag: ["Todos", "Tarde"],
 
-    previewUrl: "",
+    previewUrl: "/peluqueria",
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ const projectsData = [
     image: "/images/projects/marroquineria.webp",
     tag: ["Todos", "Tarde"],
 
-    previewUrl: "",
+    previewUrl: "/marroquineria",
   },
 ];
 

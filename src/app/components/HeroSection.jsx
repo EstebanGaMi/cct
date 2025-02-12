@@ -57,7 +57,7 @@ export const HeroSection = () => {
               </button>
             </Link>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfu8AtaXd-5JS8hclY_RHbG-suSo9sAqEgIAZsMF9pH3UVXMw/viewform?usp=dialog"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeWsafIalDGPu5Tf06juy4ZrYWHhpFZnARoEosOpDoL1hyC1w/viewform?usp=sf_link"
               target="_blank"
             >
               <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-gray-800 via-blue-800 to-sky-600 hover:bg-slate-800 text-white mt-3">
