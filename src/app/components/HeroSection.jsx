@@ -47,7 +47,11 @@ export const HeroSection = () => {
             En nuestro CCT de Mendoza, te ofrecemos talleres, cursos y
             actividades prácticas para que puedas estudiar lo que te gusta y
             desarrollar nuevas habilidades. ¡Sumate a nuestra comunidad y
-            construyamos juntos tu camino hacia el éxito!"
+            construyamos juntos tu camino hacia el éxito!" <p></p>
+            <span className=" border-blue-600 border-2 rounded">
+              {" "}
+              Turno mañana de 8:30 a 12:30 y Turno tarde de 15:00 a 18:00.
+            </span>
           </p>
 
           <div>

@@ -100,12 +100,16 @@ export const ProjectsSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-40 mb-6">
         Cursos
       </h2>
+      <h3 className="text-center font-bold text-white mt-4 mb-6">
+        turno mañana de 8:30 a 12:30hs y Turno tarde de 15:00 a 18:00hs
+      </h3>
       <div className=" text-white text-4xl z-0 font-bold flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           OnClick={handleTagChange}
           name="Todos"
           isSelected={tag === "Todos"}
         />
+
         <ProjectTag
           OnClick={handleTagChange}
           name="Mañana"
