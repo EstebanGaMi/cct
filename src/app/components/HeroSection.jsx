@@ -47,7 +47,7 @@ export const HeroSection = () => {
             En nuestro CCT de Mendoza, te ofrecemos talleres, cursos y
             actividades prácticas para que puedas estudiar lo que te gusta y
             desarrollar nuevas habilidades. ¡Sumate a nuestra comunidad y
-            construyamos juntos tu camino hacia el éxito!" <p></p>
+            construyamos juntos tu camino hacia el éxito!"
             <span className=" border-blue-600 border-2 rounded">
               {" "}
               Turno mañana de 8:30 a 12:30 y Turno tarde de 15:00 a 18:00.
@@ -61,7 +61,7 @@ export const HeroSection = () => {
               </button>
             </Link>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeWsafIalDGPu5Tf06juy4ZrYWHhpFZnARoEosOpDoL1hyC1w/viewform?usp=sf_link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScqV9g3TIHn226ntKLu6JCACjpXW6EszN6BXYZleKGOlVbr5g/viewform?usp=header"
               target="_blank"
             >
               <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-gray-800 via-blue-800 to-sky-600 hover:bg-slate-800 text-white mt-3">

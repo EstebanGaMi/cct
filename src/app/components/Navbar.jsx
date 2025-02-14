@@ -19,7 +19,7 @@ const navLinks = [
   },
   {
     title: "Inscripciones",
-    path: "https://docs.google.com/forms/d/e/1FAIpQLSeWsafIalDGPu5Tf06juy4ZrYWHhpFZnARoEosOpDoL1hyC1w/viewform?usp=sf_link",
+    path: "https://docs.google.com/forms/d/e/1FAIpQLScqV9g3TIHn226ntKLu6JCACjpXW6EszN6BXYZleKGOlVbr5g/viewform?usp=header",
     isExternal: true, // Indicamos que es un enlace externo
   },
 ];
