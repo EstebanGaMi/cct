@@ -116,7 +116,7 @@ export const AboutSection = ({ area }) => {
           <ul className="grid grid-cols-2 gap-4">
             <li>
               <Image
-                src={`/images/certificates/images.jpeg`}
+                src={`/images/certificates/${area}/1.jpg`}
                 alt="certificado1"
                 width={200}
                 height={200}
@@ -126,7 +126,97 @@ export const AboutSection = ({ area }) => {
             </li>
             <li>
               <Image
-                src={`/images/certificates/${area}/2.webp`}
+                src={`/images/certificates/${area}/2.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/3.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/4.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/5.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/6.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/7.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/8.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/9.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/10.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/11.jpg`}
+                alt="certificado2"
+                width={200}
+                height={200}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
+            </li> <li>
+              <Image
+                src={`/images/certificates/${area}/12.jpg`}
                 alt="certificado2"
                 width={200}
                 height={200}
