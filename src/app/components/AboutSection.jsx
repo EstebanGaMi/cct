@@ -116,7 +116,7 @@ export const AboutSection = ({ area }) => {
           <ul className="grid grid-cols-2 gap-4">
             <li>
               <Image
-                src={`/images/certificates/${area}/1.webp`}
+                src={`/images/certificates/images.jpeg`}
                 alt="certificado1"
                 width={200}
                 height={200}
