@@ -1,112 +1,88 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
-import { NavLink } from "./NavLink";
-import { BsGridFill, BsGrid } from "react-icons/bs";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { MenuOverlay } from "./MenuOverlay";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { SITE } from "../data/cursos";
 
-// Definimos los enlaces de navegación
-const navLinks = [
-  {
-    title: "Inicio",
-    path: "/",
-  },
-  {
-    title: "Cursos",
-    path: "/projects",
-  },
-  {
-    title: "Inscripciones",
-    path: "https://docs.google.com/forms/d/e/1FAIpQLScqV9g3TIHn226ntKLu6JCACjpXW6EszN6BXYZleKGOlVbr5g/viewform?usp=header",
-    isExternal: true, // Indicamos que es un enlace externo
-  },
+const links = [
+  { title: "Inicio", path: "/" },
+  { title: "Cursos", path: "/cursos" },
+  { title: "Horarios", path: "/#horarios" },
+  { title: "Cómo inscribirme", path: "/#pasos" },
+  { title: "Dónde estamos", path: "/#ubicacion" },
+  { title: "Contacto", path: "/contact" },
 ];
 
 export const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [abierto, setAbierto] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => setAbierto(false), [pathname]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0f175aa4] bg-opacity-95 rounded-b-3xl">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-6 py-2">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold my-[-40px] "
-        >
-          <Image
-            className="mt-5 mb-2 invert-[60%] md:w-28 w-16"
-            src={"/images/logo.svg"}
-            alt="logo"
-            width={100}
-            height={100}
-            priority
-          />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-linea bg-papel/95 backdrop-blur-sm">
+      <nav className="contenedor flex h-[72px] items-center justify-between">
+        <Link href="/" className="flex items-center gap-3" aria-label="CCT 6-048, ir al inicio">
+          <Image src="/images/logo.svg" alt="" width={44} height={44} priority />
+          <span className="font-titulo text-2xl font-extrabold uppercase leading-none tracking-tight">
+            CCT <span className="text-gris">6-048</span>
+          </span>
         </Link>
-        <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
-            <button
-              aria-label="gridButton"
-              onClick={() => setNavbarOpen(true)}
-              className=" flex items-center px-3 py-2 border-2 rounded border-slate-200 border-opacity-10 text-blue-500 hover:text-white hover:border-purple-500"
-            >
-              <BsGrid className="h-5 w-5" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className=" flex items-center px-3 py-2 border rounded border-slate-200 border-opacity-10 text-blue-500 hover:text-white hover:border-purple-500"
-            >
-              <BsGridFill className="h-5 w-5" />
-            </button>
-          )}
-        </div>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                {link.isExternal ? (
-                  <a
-                    href={link.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" text-gray-400 hover:text-white transition-colors text-xl"
-                  >
-                    {link.title}
-                  </a>
-                ) : (
-                  // Enlace interno usando NavLink
-                  <NavLink href={link.path} title={link.title} />
-                )}
+
+        <ul className="hidden items-center gap-7 lg:flex">
+          {links.map((l) => {
+            const activo = l.path === pathname;
+            return (
+              <li key={l.path}>
+                <Link
+                  href={l.path}
+                  className={`border-b-[3px] py-1 font-semibold transition-colors ${
+                    activo ? "border-amarillo" : "border-transparent hover:border-tinta"
+                  }`}
+                >
+                  {l.title}
+                </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
-      <section className="flex justify-around py-2 border border-slate-700 lg:border-none md:border-none">
-        {/* <Link
-          href="https://github.com/EstebanGaMi"
+            );
+          })}
+        </ul>
+
+        <a
+          href={SITE.inscripcionUrl}
           target="_blank"
-          aria-label="this is my github"
+          rel="noopener noreferrer"
+          className="btn-primario hidden !px-5 !py-2 !text-lg lg:inline-flex"
         >
-          <AiOutlineGithub className="text-2xl text-white lg:hidden md:hidden hover:text-blue-500" />
-        </Link> */}
-        <Link
-          href="https://www.instagram.com/cct6048/"
-          target="_blank"
-          aria-label="this is my instagram"
+          Inscribirme
+        </a>
+
+        <button
+          onClick={() => setAbierto(!abierto)}
+          className="grid h-12 w-12 place-items-center border-2 border-tinta lg:hidden"
+          aria-label={abierto ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={abierto}
         >
-          <AiOutlineInstagram className="text-2xl text-white lg:hidden md:hidden hover:text-blue-500" />
-        </Link>
-        {/* <Link
-          href="https://www.linkedin.com/in/esteban-garay-4baa94202/"
-          target="_blank"
-          aria-label="this is my linkedin"
-        >
-          <AiOutlineLinkedin className="text-2xl text-white lg:hidden md:hidden hover:text-blue-500" />
-        </Link> */}
-      </section>
-    </nav>
+          {abierto ? <HiX className="h-7 w-7" /> : <HiMenuAlt4 className="h-7 w-7" />}
+        </button>
+      </nav>
+
+      {abierto && (
+        <ul className="border-t border-linea bg-papel lg:hidden">
+          {links.map((l) => (
+            <li key={l.path} className="border-b border-linea">
+              <Link
+                href={l.path}
+                onClick={() => setAbierto(false)}
+                className="contenedor block py-4 font-titulo text-2xl font-bold uppercase hover:bg-amarillo"
+              >
+                {l.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </header>
   );
 };

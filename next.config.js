@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
 module.exports = {
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
+    // Permite que el build termine aunque haya avisos de ESLint.
     ignoreDuringBuilds: true,
+  },
+  async redirects() {
+    // La lista de cursos antes estaba en /projects: mantenemos los links viejos funcionando.
+    return [{ source: "/projects", destination: "/cursos", permanent: true }];
   },
 };

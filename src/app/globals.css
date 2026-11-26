@@ -1,49 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Estilos comunes */
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-/* Modo oscuro */
-html.dark {
-  background-color: #161616;
-  color: rgb(255, 255, 255);
-}
-
-/* Modo claro */
-html.light {
-  background-color: #c6e3fe;
-  color: black;
-}
-
-/* Puedes añadir más estilos para los diferentes elementos de tu página */
-button {
-  transition: background-color 0.3s ease, color 0.3s ease;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   overflow-x: hidden;
+  font-size: 1.0625rem;
+  line-height: 1.6;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
+::selection {
+  background: #f5b700;
+  color: #161616;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #bdbcbc;
+:focus-visible {
+  outline: 3px solid #f5b700;
+  outline-offset: 3px;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #0018cb;
-  border-radius: 5px;
+@layer components {
+  .contenedor {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* Botones rectos, tipo cartel */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-[3px] border-2 border-tinta px-6 py-3.5 font-titulo text-xl font-bold uppercase tracking-wide transition-colors duration-150;
+  }
+  .btn-primario {
+    @apply btn bg-amarillo text-tinta hover:bg-tinta hover:text-amarillo;
+  }
+  .btn-oscuro {
+    @apply btn bg-tinta text-papel hover:bg-amarillo hover:text-tinta;
+  }
+  .btn-borde {
+    @apply btn bg-transparent text-tinta hover:bg-tinta hover:text-papel;
+  }
+
+  /* Encabezado de sección: número + rótulo + título */
+  .rotulo {
+    @apply flex items-center gap-3 font-titulo text-base font-bold uppercase tracking-[0.18em] text-gris;
+  }
+  .rotulo::after {
+    content: "";
+    @apply h-px w-12 bg-gris;
+  }
+  .titulo {
+    @apply font-titulo text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-tinta sm:text-6xl;
+  }
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #464646;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

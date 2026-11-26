@@ -1,20 +1,7 @@
-import React from "react";
-import { AboutSection } from "../components/AboutSection";
-import { Navbar } from "../components/Navbar";
-import SocialNetworks from "../components/SocialBar";
+import { CoursePage, cursoMetadata } from "../components/CoursePage";
 
-const page = ({ darkMode }) => {
-  return (
-    <section
-      className={`flex min-h-screen flex-col ${
-        darkMode ? "bg-[#121212]" : ""
-      } pt-20 z-40`}
-    >
-      <Navbar />
-      <AboutSection area="gas" />
-      <SocialNetworks />
-    </section>
-  );
-};
+export const metadata = cursoMetadata("gas");
 
-export default page;
+export default function Page() {
+  return <CoursePage slug="gas" />;
+}

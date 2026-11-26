@@ -1,44 +1,45 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import "./globals.css";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { Barlow, Barlow_Condensed } from "next/font/google";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import { MobileCTA } from "./components/MobileCTA";
+
+const titulo = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-titulo",
+  display: "swap",
+});
+
+const cuerpo = Barlow({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cuerpo",
+  display: "swap",
+});
+
+export const metadata = {
+  title: "CCT 6-048 | Cursos de oficios",
+  description:
+    "Cursos prácticos de Soldadura, Textil, Carpintería, Gas, Informática y Peluquería en Mendoza. Turno mañana y tarde.",
+};
 
 export default function RootLayout({ children }) {
-  const [darkMode, setDarkMode] = useState(true);
-
-  useEffect(() => {
-    // Verifica el tema guardado en el localStorage al cargar la página
-    const savedMode = localStorage.getItem("theme");
-    if (savedMode) {
-      setDarkMode(savedMode === "dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    setDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      // Guarda el nuevo modo en el localStorage
-      localStorage.setItem("theme", newMode ? "dark" : "light");
-      return newMode;
-    });
-  };
-
   return (
-    <html lang="en" className={darkMode ? "dark" : "light"}>
-      <body className="transition-colors duration-300 ease-in-out">
-        <button
-          onClick={toggleTheme}
-          className="fixed top-5 left-1/2 transform -translate-x-1/2 p-2 bg-gray-800 text-white rounded-full z-50"
+    <html lang="es" className={`${titulo.variable} ${cuerpo.variable}`}>
+      <body className="bg-papel font-cuerpo text-tinta antialiased">
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:bg-amarillo focus:px-4 focus:py-2 focus:font-bold"
         >
-          {darkMode ? (
-            <FaSun className="text-2xl" />
-          ) : (
-            <FaMoon className="text-2xl" />
-          )}
-        </button>
-
-        {children}
+          Saltar al contenido
+        </a>
+        <Navbar />
+        <main id="contenido" className="pb-20 md:pb-0">
+          {children}
+        </main>
+        <Footer />
+        <MobileCTA />
       </body>
     </html>
   );

@@ -1,95 +1,62 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { CURSOS, SITE, TURNOS } from "../data/cursos";
 
-export const HeroSection = () => {
-  return (
-    <section className="lg:pt-[100px] md:pt-[250px] pt-[180px]">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start "
-        >
-          <h1 className="text-white mb-4 text-4xl lg:text-5xl sm:text-3xl lg:leading-normal font-extrabold">
-            <div className=" text-transparent bg-clip-text bg-gradient-to-r from-blue-800  to-sky-300">
-              Tenemos cursos de{" "}
-            </div>
-            <TypeAnimation
-              className="text-2xl lg:text-3xl sm:text-xl"
-              sequence={[
-                "Soldadura",
-                1000,
-                "Peluquería",
-                1000,
-                "Carpintería",
-                1000,
-                "Informática",
-                1000,
-                "Textil",
-                1000,
-                "Marroquineria",
-                1000,
-                "Gas",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 ">
-            ¿Querés aprender y divertirte mientras te preparás para tu futuro?
-            En nuestro CCT de Mendoza, te ofrecemos talleres, cursos y
-            actividades prácticas para que puedas estudiar lo que te gusta y
-            desarrollar nuevas habilidades. ¡Sumate a nuestra comunidad y
-            construyamos juntos tu camino hacia el éxito!"
-            <span className=" border-blue-600 border-2 rounded">
-              {" "}
-              Turno mañana de 8:30 a 12:30 y Turno tarde de 15:00 a 18:00.
-            </span>
-          </p>
+export const HeroSection = () => (
+  <section className="border-b border-linea pt-[72px]">
+    <div className="contenedor grid gap-10 py-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:py-20">
+      <div className="flex flex-col justify-center">
+        <p className="rotulo">Centro de Capacitación para el Trabajo · La Favorita, Mendoza</p>
+        <h1 className="mt-5 font-titulo text-6xl font-extrabold uppercase leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl">
+          Aprendé un oficio.
+          <br />
+          <span className="bg-amarillo px-2 box-decoration-clone">Trabajá con</span>{" "}
+          <span className="bg-amarillo px-2 box-decoration-clone">tus manos.</span>
+        </h1>
+        <p className="mt-7 max-w-lg text-xl text-gris">
+          {CURSOS.length} cursos con práctica en taller:{" "}
+          <span className="text-tinta">
+            {CURSOS.map((c) => c.nombreCorto || c.nombre).join(", ").replace(/, ([^,]*)$/, " y $1")}.
+          </span>
+        </p>
 
-          <div>
-            <Link href="/projects">
-              <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-gray-800 via-blue-800 to-sky-600 hover:bg-slate-500  text-white">
-                Cursos
-              </button>
-            </Link>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScqV9g3TIHn226ntKLu6JCACjpXW6EszN6BXYZleKGOlVbr5g/viewform?usp=header"
-              target="_blank"
-            >
-              <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-gray-800 via-blue-800 to-sky-600 hover:bg-slate-800 text-white mt-3">
-                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                  Inscripciones
-                </span>
-              </button>
-            </a>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-4 place-self-center mt-4 lg:mt-0"
-        >
-          <div className="rounded-full bg-slate-200 bg-opacity-10 w-[400px] h-[400px] relative ">
-            <Image
-              src="/images/logo.svg"
-              alt="avatar"
-              className="absolute rounded-3xl transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={400}
-              height={400}
-              priority={true}
-            />
-          </div>
-        </motion.div>
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a href={SITE.inscripcionUrl} target="_blank" rel="noopener noreferrer" className="btn-primario">
+            Quiero inscribirme
+          </a>
+          <Link href="/cursos" className="btn-borde">
+            Ver los cursos
+          </Link>
+        </div>
       </div>
-    </section>
-  );
-};
+
+      <div className="relative">
+        <div className="relative aspect-[4/5] w-full overflow-hidden bg-papel2 sm:aspect-[4/3] lg:aspect-[4/5]">
+          <Image
+            src="/images/certificates/soldadura/1.jpg"
+            alt="Estudiante soldando en el taller del CCT"
+            fill
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        {/* Cartel de horarios */}
+        <div className="absolute -bottom-6 left-4 right-4 border-2 border-tinta bg-papel sm:left-auto sm:right-6 sm:w-80">
+          <p className="bg-tinta px-4 py-2 font-titulo text-lg font-bold uppercase tracking-[0.15em] text-amarillo">
+            Horarios
+          </p>
+          <dl className="divide-y divide-linea px-4">
+            {Object.values(TURNOS).map((t) => (
+              <div key={t.nombre} className="flex items-baseline justify-between py-2.5">
+                <dt className="font-semibold">Turno {t.nombre.toLowerCase()}</dt>
+                <dd className="font-titulo text-xl font-bold">{t.horario}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div className="h-6" />
+  </section>
+);
